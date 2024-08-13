@@ -24,3 +24,22 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 });
+let mybutton = document.getElementById("scrollToTopBtn");
+
+window.onscroll = function() {
+  scrollFunction();
+};
+
+function scrollFunction() {
+    console.log(document.documentElement.scrollTop)
+  if (document.body.scrollTop > 575 || document.documentElement.scrollTop > 575) {
+    mybutton.style.display = "block";
+  } else {
+    mybutton.style.display = "none";
+  }
+}
+
+function scrollToTop() {
+  document.body.scrollTop = 0;
+  document.documentElement.scrollTop = 0;
+}
